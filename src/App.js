@@ -16,7 +16,7 @@ const addFriend = async () => {
       data.append("name", input_name);
       data.append("comment", input_comment);
   
-      await fetch("http://localhost:3001/addFriend", {
+      await fetch("https://five610-project3-server.onrender.com/addFriend", {
         method: "post",
         body: data,
       })
@@ -43,7 +43,7 @@ const updateFriend = async (id) => {
     data.append("_id", target_id);
     data.append("comment", newComment);
 
-    await fetch("http://localhost:3001/updateCommentById", {
+    await fetch("https://five610-project3-server.onrender.com/updateCommentById", {
       method: "post",
       body: data,
     })
@@ -67,7 +67,7 @@ const deleteFriend = async (id) => {
     let data = new URLSearchParams();
     data.append("_id", target_id);
 
-    fetch("http://localhost:3001/deleteById", {
+    fetch("https://five610-project3-server.onrender.com/deleteById", {
       method: "post",
       body: data,
     })
@@ -89,7 +89,7 @@ const deleteFriend = async (id) => {
 // fetch all data from database again, and rerender
 useEffect(() => {
   async function fetchGET_findAllFriends() {
-    await fetch("http://localhost:3001/findAllFriends")
+    await fetch("https://five610-project3-server.onrender.com/findAllFriends")
       .then((res) => res.json())
       .then((txt) => {  
         setListOfFriends(txt);
