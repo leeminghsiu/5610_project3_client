@@ -102,6 +102,7 @@ useEffect(() => {
 
   return (
     <div className="App">
+      <button id="mint-button">Public mint</button>
       <input type="text" placeholder='User name...' onChange={(e) => {setName(e.target.value)}} />
       <input type="text" placeholder='Make a comment...' onChange={(e) => {setComment(e.target.value)}} />
       <button onClick={addFriend}>add friend</button>
